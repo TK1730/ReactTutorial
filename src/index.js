@@ -11,6 +11,7 @@ import books from './chapter3/books'
 import ForNest from './chapter3/ForNest'
 import ForFilter from './chapter3/ForFilter'
 import ForSort from './chapter3/ForSort'
+import Chapter3 from './chapter3/chapter3'
 
 const root = ReactDOM.createRoot(document.getElementById('root'))
 root.render(
@@ -42,6 +43,7 @@ root.render(
             <p>--------</p>
             {/* ソートの例 */}
             <ForSort src={books} />
+            <Chapter3 />
         </div>
     </React.StrictMode>
 )
