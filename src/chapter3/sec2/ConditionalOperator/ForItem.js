@@ -10,6 +10,11 @@ export default function ForItem({ book }) {
             <dd>
                 {book.summary}
                 {book.download ? <Download isbn={book.isbn} /> : null}
+                {/* 式がtrueの場合にだけ表示する
+                {book.download && <Download isbn={book.isbn} />} */}
+
+                {/* 式がfalseの場合にだけ表示する */}
+                {/* {book.download || 'x'} */}
             </dd>
         </>
     )

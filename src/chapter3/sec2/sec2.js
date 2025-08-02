@@ -2,6 +2,7 @@ import books from "../books.js"
 import IfElse from "./IIFE/ForNest"
 import ConditionalOperator from "./ConditionalOperator/ForNest"
 import IIFE from "./IIFE/ForNest"
+import SelectStyle from "./SelectedStyle/SelectStyle.js"
 
 export default function sec2() {
     return (
@@ -12,6 +13,9 @@ export default function sec2() {
             <IIFE src={books} />
             <h3>条件演算子を使った条件分岐</h3>
             <ConditionalOperator src={books} />
+            <h3>スタイルを選択的に適用する</h3>
+            <SelectStyle mood="light" />
+            <SelectStyle mood="dark" />
         </>
     )
 }
