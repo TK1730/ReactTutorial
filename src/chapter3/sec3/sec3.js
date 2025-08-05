@@ -5,6 +5,9 @@ import TitledPanelKey from "./6/TitledPanel.js"
 import ListTemplate from "./8/ListTemplate.js"
 import ListTemplateRenderProp from "./12/ListTemplate.js"
 import { MyHello, MyHelloRewritten } from "../MyHello.js"
+import MyHelloProptypes from "./14/MyHello.js"
+import StateBasic from "./28/StateBasic.js"
+import StateParent from "./29/StateParent.js"
 
 
 const title = <h3>メンバー募集中！</h3>
@@ -62,6 +65,15 @@ export default function sec3() {
                     <dd>{elem.summary}</dd>
                 </>
             )} />
+
+            <h3>3-3-4 プロパティ型の検証(PropTypes)</h3>
+            <MyHelloProptypes />
+
+            <h3>3-3-5 State値更新のための2つの構文</h3>
+            <StateBasic init={0} />
+
+            <h3>3-3-6 子コンポーネントから親コンポーネントへの情報伝達</h3>
+            <StateParent />
         </>
     )
 }

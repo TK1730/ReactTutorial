@@ -43,7 +43,10 @@ root.render(
             <p>--------</p>
             {/* ソートの例 */}
             <ForSort src={books} />
+
+            {/* チャプター３の描画 */}
             <Chapter3 />
+
         </div>
     </React.StrictMode>
 )

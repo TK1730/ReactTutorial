@@ -1,5 +1,6 @@
 import Section2 from "./sec2/sec2.js"
 import Section3 from "./sec3/sec3.js"
+import Section4 from "./sec4/sec4.js"
 
 export default function Chapter3() {
     return (
@@ -9,6 +10,8 @@ export default function Chapter3() {
             <Section2 />
             <h2>Section3 Props/Stateの理解を深める</h2>
             <Section3 />
+            <h2>より高度なイベント処理</h2>
+            <Section4 />
         </>
     )
 }
