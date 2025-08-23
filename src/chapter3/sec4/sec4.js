@@ -6,6 +6,9 @@ import EventPoint from './EventPoint.js'
 import EventKey from './EventKey.js'
 import EventArgs from './EventArgs.js'
 import EventArgs2 from './EventArgs2.js'
+import { EventPropagation, EventPropagationBubCapture, EventPropagationControl, EventPropagationCancel} from './EventPropagation.js'
+import EventOnece from './EventOnece.js'
+import EventPassive from './EventPassive.js'
 
 export default function sec4() {
     return (
@@ -51,6 +54,39 @@ export default function sec4() {
 
             <h4>補足：独自データ属性を利用する</h4>
             <EventArgs2 />
+
+            <h4>3-4-3 イベントの伝搬を抑制する</h4>
+            <EventPropagation />
+            <h5>処理の順序を変更する</h5>
+            <p>(バブリングフェーズではなく)キャプチャフェーズでイベントを処理することもできる。</p>
+            <p>イベントハンドラーをonXxxx属性ではなくonXxxxCapture属性で設定することができます。</p>
+            <EventPropagationBubCapture />
+
+            <h5>伝搬を抑制する</h5>
+            <EventPropagationControl />
+
+            <h5>イベント既定の動作をキャンセルする</h5>
+            <p>イベント既定の動作とは、イベントに伴ってウェブ上で発生する動作のこと。<br />
+                例えば、リンクをクリックしたときにそのリンク先に移動することや、テキストボックスでキーを入力したら対応する文字が反映されるなどの動作のこと。<br />
+                これらの動作は、イベントハンドラー内で`e.preventDefault()`を呼び出すことでキャンセルすることができます。
+            </p>
+            <p>キャンセルできないイベントもある。イベントがキャンセルできるか否かは、同じくイベントオブジェクトのcancelableプロパティから確認できる。</p>
+            <EventPropagationCancel />
+
+            <h4>3-4-4 イベントハンドラーのオプションを設定する</h4>
+            <p>Reactではonceオプション、passiveオプションには標準で対応していないので、若干ながら独自のコードを追加する必要がある。</p>
+
+            <h5>イベントハンドラーを初回のみ実行する</h5>
+            <p>onceオプションは、イベントハンドラーを初回のみ実行するためのオプションです。これを利用することで、特定のイベントに対して一度だけ処理を行いたい場合に便利です。</p>
+            <p>以下は、今日の運勢を表示するサンプル。結果は、初回クリック時に一度だけ表示され、2回以降のクリックでは変動しない。</p>
+            <EventOnece />
+
+            <h5>非Passiveモードでイベントハンドラーを設置する</h5>
+            <p>passiveモードはハンドラーがあらかじめpreventDefault()を呼び出さないことを示すオプションです。これにより、ブラウザはスクロールなどのデフォルト動作を最適化できるようになります。</p>
+            <p>Reactにおける一部のイベントではPassiveモードが規定になっている。これはハンドラーは以下でpreventDefalutメソッドを呼び出すケースが相応に限定されていることからも妥当だが、思わぬ不具合の原因となることもある。</p>
+
+            <p>以下はwheelイベントでpreventDefaultメソッドを呼び出しただけの簡単かコードだが、エラーとなる。</p>
+            <EventPassive />
         </>
     )
 }
