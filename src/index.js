@@ -12,6 +12,7 @@ import ForNest from './chapter3/ForNest'
 import ForFilter from './chapter3/ForFilter'
 import ForSort from './chapter3/ForSort'
 import Chapter3 from './chapter3/chapter3'
+import Chapter4 from './chapter4/chapter4'
 
 const root = ReactDOM.createRoot(document.getElementById('root'))
 root.render(
@@ -46,6 +47,9 @@ root.render(
 
             {/* チャプター３の描画 */}
             <Chapter3 />
+
+            {/* チャプター4の描画 */}
+            <Chapter4 />
 
         </div>
     </React.StrictMode>
