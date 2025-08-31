@@ -1,4 +1,4 @@
-import Sec1 from './sec1/StateForm'
+import Sec1 from './sec1/sec1.js'
 
 export default function Chapter4() {
     return (
