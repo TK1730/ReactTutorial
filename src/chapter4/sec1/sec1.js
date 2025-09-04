@@ -2,6 +2,10 @@ import StateForm from "./StateForm"
 import StateFormUC from "./StateFormUC"
 import FormTextarea from "./FormTextarea"
 import FormSelect from "./FormSelect"
+import FormList from "./FormList"
+import FormRadio from "./FormRadio"
+import FormCheck from "./FormCheck"
+import FormCheckMulti from "./FormCheckMulti"
 
 export default function sec1() {
     return (
@@ -9,7 +13,7 @@ export default function sec1() {
             <h3>4-1-1 フォーム管理の基本</h3>
             <p>テキストボックスに入力された情報に応じて、挨拶メッセージを生成する</p>
             <StateForm />
-            
+
             <h3>4-1-2 注意:changeイベントの発生タイミング</h3>
             <p>JavaScriptのchangeイベントは、フォームの要素が変更されてフォーカスを外した後に発生する。</p>
             <p>Reactのchangeイベントは、JavaScriptのinputイベントと紐づいているため、フォームの要素が変更されるたびに発生する。</p>
@@ -32,7 +36,19 @@ export default function sec1() {
             <FormSelect />
 
             <h4>リストボックス</h4>
-            <p>複数選択可能なリストボックスも</p>
+            <p>複数選択可能なリストボックスもselect要素で生成できる。ただし、State反映のためのコードが若干複雑になる。</p>
+            <FormList />
+
+            <h4>ラジオボタン</h4>
+            <p>ラジオボタンでは、現在値を反映するコードに若干の工夫を要する</p>
+            <FormRadio />
+
+            <h4>チェックボックス(単一選択)</h4>
+            <p>チェックボックスでは単一でオン/オフを表す場合と、リストで複数選択オプションを表す場合がある。</p>
+            <p>それぞれのパターンでコードの書き方も変化するので、まずはオン/オフを表す場合から見ていく。</p>
+            <FormCheck />
+
+            <FormCheckMulti />
         </div>
     )
 }
