@@ -6,6 +6,7 @@ import FormList from "./FormList"
 import FormRadio from "./FormRadio"
 import FormCheck from "./FormCheck"
 import FormCheckMulti from "./FormCheckMulti"
+import FormFile from "./FormFile"
 
 export default function sec1() {
     return (
@@ -49,6 +50,12 @@ export default function sec1() {
             <FormCheck />
 
             <FormCheckMulti />
+
+            <h4>ファイル入力ボックス</h4>
+            <p>他のフォートと異なり、ファイル入力ボックスではアプリから値を設定しない。(ユーザーが任意のファイルを選択して、アプリは受け取るだけで、特定のファイルを指定することができない)</p>
+            <p>そのため、ファイル入力ボックスは非制御コンポーネントとして実装する。</p>
+            <p>以下は、選択されたファイル情報をログに出力する例</p>
+            <FormFile />
         </div>
     )
 }
