@@ -1,4 +1,5 @@
 import { useState } from "react"
+import './StateTodo.css'
 
 // Todo項目idの最大値（登録都度にインクリメント）
 let maxId = 0
@@ -6,6 +7,7 @@ export default function StateTodo() {
     // 入力値（title）、Todoリスト（todo）をStateで管理
     const [title, setTitle] = useState('')
     const [todo, setTodo] = useState([])
+    const [desc, setDesc] = useState(true)
 
     // テキストボックスへの入力をStateに反映
     const handleChangeTitle = (e) => {
@@ -40,6 +42,32 @@ export default function StateTodo() {
         }))
     }
 
+    // [削除] ボタンで該当するTodo項目を破棄
+    const handleRemove = (e) => {
+        // filterでid値が異なるものだけを抽出
+        setTodo(todo.filter(item =>
+            item.id !== Number(e.target.dataset.id)
+        ))
+    }
+
+    // 次のソート方向 (降順であれば true)
+    const handleSort = (e) => {
+        const sorted = [...todo]
+        sorted.sort((m, n) => {
+            // desc値に応じて昇順/降順を決定
+            if (desc) {
+                return n.created.getTime() - m.created.getTime()
+            } else {
+                return m.created.getTime() - n.created.getTime()
+            }
+        })
+        // desc値を反転
+        setDesc(!desc)
+        // ソート結果で置き換え
+        setTodo(sorted)
+    }
+
+
     return (
         <div>
             <label>
@@ -57,6 +85,13 @@ export default function StateTodo() {
                         <button type="button"
                             onClick={handleDone} data-id={item.id}>済
                         </button>
+                        <button type="button"
+                            onClick={handleRemove} data-id={item.id}>削除
+                        </button>
+                        <button type="button"
+                            onClick={handleSort}>
+                            ソート ({desc ? '↑' : '↓'})
+                            </button>
                     </li>
                 ))}
             </ul>

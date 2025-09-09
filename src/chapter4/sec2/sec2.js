@@ -29,6 +29,7 @@ export default function Sec2() {
 
             <h4>配列への追加-Todoの新規登録と配列の更新-Todoの済チェック</h4>
             <StateTodo />
+
         </div>
     )
 }
