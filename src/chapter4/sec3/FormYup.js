@@ -1,6 +1,6 @@
 import { useForm } from "react-hook-form"
 import { yupResolver } from '@hookform/resolvers/yup'
-import * as yup from "yup"
+import yup from './yup.jp.js'
 
 // 汎用的な検証ルールを追加
 yup.addMethod(yup.string, 'ng', function() {
@@ -25,23 +25,25 @@ const schema = yup.object({
     name: yup
         .string()
         .label('名前')
+        .transform((value, originalValue) => value.normalize('NFKC'))
         .required('${label}は必須入力です。')
-        .max(20, '${label}は${max}文字以内で入力してください。'),
+        .max(20),
     gender: yup
         .string()
         .label('性別')
-        .required('${label}は必須入力です。'),
+        .required(),
     email: yup
         .string()
         .label('メールアドレス')
         .required('${label}は必須入力です。')
-        .email('${label}の形式が不正です。'),
+        .email(),
     memo: yup
         .string()
         .label('備考')
-        .required('${label}は必須入力です。')
-        .min(10, '${label}は${min}文字以上で入力してください。')
+        .required()
+        .min(10)
         .ng(),
+    
 })
 
 export default function FormYup() {

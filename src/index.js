@@ -13,6 +13,7 @@ import ForFilter from './chapter3/ForFilter'
 import ForSort from './chapter3/ForSort'
 import Chapter3 from './chapter3/chapter3'
 import Chapter4 from './chapter4/chapter4'
+import Chapter5 from './chapter5/chapter5'
 
 const root = ReactDOM.createRoot(document.getElementById('root'))
 root.render(
@@ -50,7 +51,8 @@ root.render(
 
             {/* チャプター4の描画 */}
             <Chapter4 />
-
+            {/* チャプター5の描画 */}
+            <Chapter5 />
         </div>
     </React.StrictMode>
 )

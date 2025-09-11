@@ -11,6 +11,8 @@ export default function Sec3() {
             <p>React Hook Formは、ZodやYupなどのスキーマベースの検証ライブラリと連携することができます。
                 これにより、複雑な検証ルールを簡潔に定義でき、コードの重複も減らせます。
             例えば、Yupライブラリを利用する場合は以下のようになります。</p>
+            <p>Yup
+            </p>
             <FormYup />
         </div>
     )
