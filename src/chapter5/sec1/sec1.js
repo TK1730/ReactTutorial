@@ -1,5 +1,6 @@
 import LazyBasic from "./LazyBasic"
 import LazyMulti from "./LazyMulti"
+import ProfilerBasic from "./ProfilerBasic"
 export default function Sec1() {
     return (
         <div>
@@ -21,6 +22,12 @@ export default function Sec1() {
                 ロードされたところで、内容を表示します。
             </p>
             <LazyMulti />
+
+            <h3>5-1-3 コンポーネントの描画時間を計測する-Profilerコンポーネント</h3>
+            <p>プロファイラー(Profiler)とは、プログラムの実行時の各種情報を収集/解析するツールのこと。
+                Profiler要素でも、アプリ全体、あるいは一部を括ることで、配下の要素が描画に要した時間を計測できるようになる。
+            </p>
+            <ProfilerBasic />
         </div>
     )
 }
