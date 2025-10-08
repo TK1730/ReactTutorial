@@ -1,29 +1,18 @@
-<<<<<<< HEAD
-export default function Sec2() {
-    return (
-        <div>
-            <h3>5-2 コンポーネント開発でのスタイル定義</h3>
-            <p>コンポーネント開発におけるスタイル定義については、style/className属性で指定する例を見てきた。</p>
-            <p>しかし、それぞれの方法にも問題があります。まず、style属性(インライン属性)はJavaScriptのコードにスタイル定義が混在している
-                ため、保守の観点から望ましくない。
-            </p>
-            <p>一方、className属性によってスタイル定義を切り離すことは可能ですが、CSSのクラス名がグローバルに作用するため、
-                あるコンポーネントのスタイルが、他のコンポーネントに影響を与える可能性がある。
-            </p>
-            <p>一般的には、このような状態は望ましくなく、コンポーネントで閉じたスタイル定義が求められる。Reactでは、いわゆるローカルスタイルを
-                定義するための様々なアプローチを提供しているので、本節でも代表的なものを見ていく。
-            </p>
-            <p>Styled JSX, Styled Components, Emotionが代表的なローカルスタイルの手法です。</p>
-            
-            <h4>5-2-1 JSX式にスタイルシートを埋め込む-Styled JSX</h4>
-            
-        </div>
-=======
 import StyledComp from "./StyledComp";
 import { MyButton, MyStyledButton } from "./StyledComp2";
 import StyledCommon from "./StyledCommon";
 import StyledGlobal from "./StyledGlobal";
 import StyledProps from "./StyledProps";
+import EmotionJsx from "./Emotionjsx";
+import EmotionComp from "./EmotionComp";
+/** @jsxImportSource @emotion/react */
+import { css, Global } from '@emotion/react';
+
+const global = css`
+    body {
+        background-color: Yellow;
+    }
+`
 
 export default function Sec2() {
     return (
@@ -54,7 +43,19 @@ export default function Sec2() {
                 radius: false,
                 color: 'dark'
             }} />
+
+            <Global styles={global} />
+            <h4>Styled JSXライクな記法</h4>
+            <p>Styled JSXライクな記法から見ていく</p>
+            <EmotionJsx />
+
+            <h4>Styled Componentsライクな記法</h4>
+            <p>Styled Componentsライクな記法も見ていく</p>
+            <EmotionComp />
+
+            <h4>グローバルスタイルを定義する</h4>
+            <p>グローバルスタイルもStyled Componentsとの中間のような記法で表現できる</p>
+
         </>
->>>>>>> 23fae417fc40c33a5d9b924c9e83bef288213c16
     )
 }

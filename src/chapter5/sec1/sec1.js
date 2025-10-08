@@ -1,12 +1,8 @@
 import LazyBasic from "./LazyBasic"
 import LazyMulti from "./LazyMulti"
-<<<<<<< HEAD
-import ProfilerBasic from "./ProfilerBasic"
-=======
 import SuspenseResult from "./SuspenseResult"
 import SuspenseSimple from "./SuspenseSimple"
 
->>>>>>> 23fae417fc40c33a5d9b924c9e83bef288213c16
 export default function Sec1() {
     return (
         <div>
@@ -29,13 +25,6 @@ export default function Sec1() {
             </p>
             <LazyMulti />
 
-<<<<<<< HEAD
-            <h3>5-1-3 コンポーネントの描画時間を計測する-Profilerコンポーネント</h3>
-            <p>プロファイラー(Profiler)とは、プログラムの実行時の各種情報を収集/解析するツールのこと。
-                Profiler要素でも、アプリ全体、あるいは一部を括ることで、配下の要素が描画に要した時間を計測できるようになる。
-            </p>
-            <ProfilerBasic />
-=======
             <h4>5-1-2 非同期処理の終了を待ち受ける-Suspense コンポーネント(2)</h4>
             <p>Suspense要素そのものは以前から利用できたが、React 18以降では、さらに利用範囲が広がっています。
                 具体的には、コンポーネント以外のリソース（データ取得など）を待つことができるようになりました。</p>
@@ -50,7 +39,6 @@ export default function Sec1() {
                 非同期処理の結果を得るには、Promiseのラッパーを準備する必要がある。
             </p>
             <SuspenseResult />
->>>>>>> 23fae417fc40c33a5d9b924c9e83bef288213c16
         </div>
     )
 }
